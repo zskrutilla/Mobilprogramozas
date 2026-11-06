@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_04_RelativeSourceAncestorDemo.MainPage"
+             Title="RelativeSource Ancestor">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="30,0"
+                             Spacing="8"
+                             BindingContext="This text lives on the ancestor VerticalStackLayout">
+            <Label Text="AncestorType e.g."
+                   FontAttributes="Bold" />
+            <!-- Label reads the nearest VerticalStackLayout ancestor Tag -->
+            <Label FontAttributes="Italic"
+                   Text="{Binding Source={RelativeSource AncestorType={x:Type VerticalStackLayout}}, Path=BindingContext}" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>

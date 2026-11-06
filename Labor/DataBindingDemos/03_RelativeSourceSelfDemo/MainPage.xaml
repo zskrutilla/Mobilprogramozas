@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="_03_RelativeSourceSelfDemo.MainPage"
+             Title="RelativeSource Self">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <!-- The height of BoxView is tied to its own width: square -->
+            <BoxView Color="CornflowerBlue"
+                     WidthRequest="120"
+                     HeightRequest="{Binding Source={RelativeSource Self}, Path=WidthRequest}" />
+            <Label Text="HeightRequest is bound to its own WidthRequest (Self)."
+                   FontAttributes="Italic" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
